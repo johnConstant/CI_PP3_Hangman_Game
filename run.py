@@ -35,6 +35,24 @@ def get_player_name():
             print('Only letters can be entered')
 
 
+def set_difficulty():
+    """
+    Allow user to choose the difficulty level of the game
+    Set the number of guesses allowed based on difficulty selected
+    """
+    print(" ")
+    print('Please enter Easy, Medium or Hard', 'red')
+    difficulty = input('Please select your difficulty level: ').lower()
+    if difficulty == 'easy':
+        return 8
+    elif difficulty == 'medium':
+        return 7
+    elif difficulty == 'hard':
+        return 6
+    else:
+        raise ValueError('Please enter a valid difficulty level')
+
+
 def main():
     """
     Run program functions
