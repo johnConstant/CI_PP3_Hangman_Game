@@ -19,3 +19,13 @@ def welcome():
     print(" ")
     print(" ")
     time.sleep(1)
+
+   
+def main():
+    """
+    Run program functions
+    """
+    welcome()
+
+
+main()
