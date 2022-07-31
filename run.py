@@ -2,6 +2,8 @@
 Hangman game created for third project with Code Institute
 """
 import time
+import random
+from hangman import graphic
 from words import words
 
 
@@ -54,6 +56,14 @@ def set_difficulty():
         raise ValueError('Please enter a valid difficulty level')
 
 
+def get_word(word_list):
+    """
+    Choose random word from list of words in imported list
+    """
+    word = random.choice(word_list)
+    return word
+
+
 def play_game(name, word):
     """
     Start game loop
@@ -71,7 +81,7 @@ def play_game(name, word):
         guessed_letters += guess
 
         if guess in word:
-            print(Col.GREEN + f'Well done {name}! {guess} is in the word')
+            print(f'Well done {name}! {guess} is in the word')
             correct_guesses += guess
             # https://www.youtube.com/watch?v=8ext9G7xspg
             word_list = [letter if letter in guessed_letters
@@ -82,7 +92,7 @@ def play_game(name, word):
             print(' ')
 
             if word == guessed_word:
-                print(Col.GREEN + f'Congratulations {name}, you guessed the correct word\
+                print(f'Congratulations {name}, you guessed the correct word\
 , {word}')
                 print(' ')
                 print("Enter 'y' to play again and 'n' to end the game")
@@ -95,7 +105,7 @@ def play_game(name, word):
         else:
             lives -= 1
             print(graphic[lives])
-            print(Col.RED + f'Sorry but {guess} is not in the word.')
+            print(f'Sorry but {guess} is not in the word.')
     else:
         print(' ')
         print('Sorry but that is game over')
