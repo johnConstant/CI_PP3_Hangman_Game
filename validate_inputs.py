@@ -12,13 +12,16 @@ def validate_guess(value):
     try:
         if not value.isalpha():
             raise TypeError(
-                    "Please enter a letter"
+                    "Enter a letter"
                 )
         elif len(value) > 1:
             raise ValueError(
                     Col.RED + f"You entered {value}, please only enter one\
  letter at a time"
                 )
+    except TypeError as err:
+        print(Col.RED + f"Invalid data: {err}, please try again")
+        return False
     except ValueError as err:
         print(Col.RED + f"Invalid data: {err}, please try again")
         return False
