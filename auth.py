@@ -39,7 +39,7 @@ def get_details():
     """
     print("\nWelcome back, please log in to continue")
     while True:
-        username = input("Please enter your email address: ")
+        username = input("Please enter your email address: \n")
         validate_user_email(username)
         break
     name = input("Please enter your name: \n").lower()

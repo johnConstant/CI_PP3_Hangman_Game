@@ -35,6 +35,7 @@ Hangman is a guessing game. A random word is selected from a word list, and the 
     - [Manual Testing](#manual-testing)
     - [Automated Testing](#automated-testing)
   - [Bugs](#bugs)
+  - [Future Improvements](#future-improvements)
   - [Deployment](#deployment)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
@@ -281,15 +282,20 @@ The testing approach is as follows:
 
 ## Bugs
 
-| **Bug** | **Fix** |
-| ------- | ------- |
-| When selecting 'go back to main menu' option after the game has finished, the game title was not displayed | Correct the function's indentation |
-| When selecting a correct menu option after a few wrong numeric inputs the relevant game option was not called | Move the while loop at the top within the function |
-| Underscores within the game title were not displayed after deployment to Heroku portal | Changed color settings for yellow & red |
-| Gradient background color does not take up the full screen size | Add background-attachment property |
-| Players names input values are not displayed in the game – instead of name a “‘Player1’’s / ‘Player2’’s move.” is shown | Reassign a value of player1name & player2name to the indexed-0 value (name) input by the user in ‘create_new_players’ function |
-| Users input data was recorded in the same row in four columns instead of 2 separate rows | Created a list of players and while loop inside the 'register_new_players' function for Google Spreadsheet update separately for two players |
-| There were quite a few errors and warnings related to exceeded number of characters in line, whitespace within a blank line, trailing white spaces or missing white spaces around operators | Split the comments or print functions into two separate rows maintaining correct indentation. Followed a guidance within pep8 online tool and corrected all warnings and errors |
+| **Bug** |
+| ------- | 
+| When incorrect email is entered while loop doesn't keep running |
+
+[Back to Table Of Contents](#table-of-contents)
+
+## Future Improvements
+
+| **Future Improvements** |
+| ------- | 
+| Add validation to guess input restricting already guessed letters |
+| Add validation to create account restricting email address to one account |
+
+[Back to Table Of Contents](#table-of-contents)
 
 ## Deployment
 

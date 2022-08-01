@@ -100,7 +100,6 @@ def play_game(name, word):
     correct_guesses = []
     word_list = list(word.strip(" "))
     print('_ ' * len(word))
-    print(word)
 
     while lives > 0:
         while True:
@@ -128,7 +127,8 @@ guessed the correct word, {word}')
             lives -= 1
             print(graphic[lives])
             print(Col.RED + f'Sorry but {guess} is not in the word.')
-
+    print(' ')
+    print(Col.RED + 'Sorry but that is game over')
     end_game(name)
 
 
