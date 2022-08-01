@@ -72,6 +72,20 @@ def set_difficulty():
             return 6
 
 
+def end_game(name):
+    print(' ')
+    print("Enter 'y' to play again and 'n' to end the game")
+    replay = input('Would you like to play another game: ')\
+        .lower()
+    validate_list(replay, ['y', 'n'])
+    if replay == 'y':
+        word = get_word(words)
+        play_game(name, word)
+    elif replay == 'n':
+        print(Col.BLUE + f"\nGoodbye {name.capitalize()}\n")
+        exit()
+
+
 def play_game(name, word):
     """
     Start game loop
@@ -105,33 +119,13 @@ def play_game(name, word):
                 print(Col.GREEN + f'Congratulations {name.capitalize()}, you \
 guessed the correct word, {word}')
                 while True:
-                    print(' ')
-                    print("Enter 'y' to play again and 'n' to end the game")
-                    replay = input('Would you like to play another game: ')\
-                        .lower()
-                    validate_list(replay, ['y', 'n'])
-                    if replay == 'y':
-                        word = get_word(words)
-                        play_game(name, word)
-                    elif replay == 'n':
-                        break
+                    end_game(name)
         else:
             lives -= 1
             print(graphic[lives])
             print(Col.RED + f'Sorry but {guess} is not in the word.')
     else:
-        print(' ')
-        print('Sorry but that is game over')
-        print(' ')
-        print("Enter 'y' to play again and 'n' to end the game")
-        replay = input('Would you like to play another game: ').lower()
-        if replay == 'y':
-            word = get_word(words)
-            play_game(name, word)
-        elif replay == 'n':
-            print(Col.BLUE + f"Goodbye {name}")
-            exit()
-            break
+        end_game(name)
 
 
 def main():
