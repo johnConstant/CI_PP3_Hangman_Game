@@ -43,6 +43,9 @@ def login():
     """
     login_details = get_details()
     data = SHEET.worksheet('auth_details').get_all_values()
+    if login_details not in data:
+        print("Couldn't find your account")
+        exit()
     for account in data:
         if account == login_details:
             print('Logged in')
