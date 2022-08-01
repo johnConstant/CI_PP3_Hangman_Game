@@ -49,10 +49,15 @@ def create_account():
     Get username from player
     """
     details = get_details()
+    data = SHEET.worksheet('auth_details').get_all_values()
+    if details in data:
+        print(Col.RED + "Sorry but an account already exists with this email")
+        print(Col.RED + "Please log in with existing account")
+        exit()
     print('Creating account...')
     worksheet = SHEET.worksheet('auth_details')
     worksheet.append_row(details)
-    print(f'Thank you {details[1]}, your account has been created.')
+    print(Col.BLUE + f'Thank you {details[1]}, your account has been created.')
     return details
 
 
@@ -63,9 +68,9 @@ def login():
     login_details = get_details()
     data = SHEET.worksheet('auth_details').get_all_values()
     if login_details not in data:
-        print("Couldn't find your account")
+        print(Col.RED + "Couldn't find your account")
         exit()
     for account in data:
         if account == login_details:
-            print('Logged in')
+            print(Col.GREEN + 'Logged in')
             return account

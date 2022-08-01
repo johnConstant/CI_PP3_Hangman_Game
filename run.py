@@ -46,11 +46,12 @@ def start_game():
     If not create account for player
     """
     print('Have you played this game before?')
-    answer = input("Enter 'y' if you have and 'n' if you have not: ")
+    answer = input("Enter 'y' if you have and 'n' if you have not: ").lower()
     if answer == 'y':
         details = auth.login()
         return details
     if answer == 'n':
+        print('\nPlease create an account to continue')
         details = auth.create_account()
         return details
 
