@@ -69,13 +69,8 @@ There is no specific audience of this game. However, I would recommend that play
 
 <details><summary>Click here to view instructions</summary>
 
-#### Main Menu
-On the main menu, users are presented with an ASCII art rendering of the name 'Connect 4'. Below the welcome graphic there are a couple of options for user to select from.
-Operation: Input a numeric value and press enter key.
-1. View game rules
-2. Play game
-
-At any point of the game, if the user inputs a number which do not correspond to the available option then they will be prompt to try again.
+#### Welcome Screen
+Upon inital start up of the game, the player is greeted by a welcome screen which consists of an ASCII art graphic with the name of the game.
 
 #### Game rules
 With the first option to view game rules, the users are presented with a short game rules and once read they can go back to the main menu.
@@ -83,74 +78,27 @@ Operation: Click any key and enter.
 
 #### Play
 With the Play Game option, users are asked if they have played the game before or not.
-Operation: Input a numeric value and press enter key. 
-The extra available option is to press 'y' key for 'yes' and 'n' for 'No'.
+Operation: Input either 'Y' or 'N' and press enter key. 
 1. Yes
 2. No
 
-#### Log-in
-When selecting option 1, users are asked to input their email addresses they used in the previous game, starting with the Player 1.
+#### Log in
+If the user selects 'Yes', the player is asked to enter their email address. Once entered the player will need to enter their name and password associated with the account. If all values match what has been saved to the Google Sheet the user is presented with a successful logged in message.
 
-The email goes through a validation process. If the user inputs an email that has not been registered they have an option to either try another email or create a new user.
-Operation: Input a numeric value and press enter key.
-1. Try another email
-2. Create a new player
+#### Create account
+If the user selects 'No', then they will need to create account by supplying their email address, name and a password. Once all details are entered and pass the validation check, an account is created for them, and a message is displayed notifying the player of account creation.
 
-User can try to input their email address until it matches the one already registered. If it does, then the greeting message with their name will be displayed.
-If they forgot their email address they can create a new players by selecting the second option.
+#### Choose Difficulty
+Once logged in or account created the player is asked to choose their difficulty level. This difficulty level determines the number of incorrect guesses available to them. There are three difficulty levels, easy, medium or hard. Easy gives the player 8 incorrect guesses, Medium 7 and Hard 6 guesses.
 
-Same option follow for Player2.
-
-#### New players registration (sign-up)
-This option is available from the play option menu and during the existing users log-in.
-Here you can sign up to create a new user.
-
-Firstly, the Player1 is asked for their name follow by the email address. Both values go through the validation.
-
-Username has to be between 2-12 characters long and contain only A-Z. It can already exist in the database.
-Email: has to be a valid email containing exactly one @-sign from an existing domain. It must not exist in the database.
-
-Same option follow for Player2.
-
-If the registration is selected as part of the log-in option (Create a new player), then the relevant player will need to input their name and email address and once validated, type the email again for log in.
-
-#### Users greeting
-
-Once both users have been logged in, the program will display a greeting message with both names and start the game.
+If the player enters anything other than those three options they will be asked to re-enter their selection.
 
 #### Game
+Once the player has chosen their difficulty level the game begins. The player is presented with the word they need to guess with the letters replaced by dashes. The user is also asked to guess their first letter. The guess input is restricted to letters only and if they attempt to enter more than one letter at a time they will need to attempt their guess again until they enter a valid guess.
 
-Players take turns to make their moves.
-The player to start is randomly selected by the program.
-The current player's name is displayed beneath the blue board showing which piece they play with. Player has to select which column they want to locate their piece in.
-Operation: Input a numeric value between 1 - 7 and press enter key.
+If the player guesses a correct letter, they are presented with a message indicating they guessed a correct letter. If the player guesses a letter that does not appear in the word they will need see a message indicating so along with a hangman graphic.
 
-A selection of invalid column will display a warning message and ask user to select a valid column.
-
-The game continues until one of the players connect their four pieces.
-
-When a player wins, a message with their name is shown on the screen.
-
-Players have 4 different options to choose from:
-1. Play again
-2. Go to main menu
-3. See your statistics
-4. Quit game
-
-Operation: Input a numeric value and press enter key.
-
-#### Play again
-By selecting this option a new game starts for the same players.
-
-#### Go to main menu
-Brings players to the main menu of the program.
-
-#### See your statistics
-Display number of games won so far by each logged player.
-
-#### Quit game
-With the guit game option, the user exits the program with a goodbye message.
-
+When the player either guesses the correct word or runs out of lives they will be asked whether they want to play another game. 
 </details>
 
 [Back to Table Of Contents](#table-of-contents)
@@ -159,23 +107,22 @@ With the guit game option, the user exits the program with a goodbye message.
 
 ### Users
 
-1. I want to have clear options to select in the main menu
-2. I want to be able to read the rules of the game
-3. I want to personalise the game and enter my name
-4. I want to be able to log-in if I return to the game
-5. I want to receive a real time feedback throughout the game
-6. I want to get a feedback when I win the game
-7. I want to be able to play multiple games when I'm logged in
-8. I want a random selection of the player to start a new game
-9. I want to see how many games I've won so far
+1. I want to be greeted by a welcome screen
+2. I want to personalise the game and enter my name
+3. I want to be able to log in if I return to the game
+4. I want to be able to create an account if I have never played before
+5. I want to be able to choose my difficulty level
+6. I want to receive a real time feedback throughout the game
+7. I want to get a feedback when I win the game
+8. I want to be able to play multiple games when I'm logged in
 
 ### Site Owner
 
-10. I want users to have a positive experience whilst playing the game
-11. I want users to easily select options from the menu
-12. I want user names and emails to be saved to Google Spreadsheet
-13. I want the user to get feedback in case of wrong input
-14. I want data entry to be validated, to guide the user on how to correctly format the input
+9. I want users to have a positive experience whilst playing the game
+10. I want users to easily select options from the menu
+11. I want user names and emails to be saved to Google Spreadsheet
+12. I want the user to get feedback in case of wrong input
+13. I want data entry to be validated, to guide the user on how to correctly format the input
 
 [Back to Table Of Contents](#table-of-contents)
 
@@ -197,7 +144,7 @@ The following flowchart summarises the structure and logic of the application.
 
 ### Frameworks & Tools
 
-- [Diagrams.net](https://app.diagrams.net/) was used to draw program flowchart
+- Microsoft Visio was used to draw program flowchart
 - [Font Awesome](https://fontawesome.com/) - icons from Font Awesome were used in the footer below the program terminal
 - [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
 - [GitHub](https://github.com/) was used as a remote repository to store project code
@@ -211,9 +158,7 @@ VSCode was used to write the project code using Code Institute template
 ### Libraries
 
 #### Python Libraries
-- os - used to clear terminal
-- random - used to alternate first player to start the game
-- sys & sleep - used to create a typing effect within the games rules
+- random - used to choose a random word from a list of words
 - time - used to displayed delayed messages in the terminal
 - [unittest](https://docs.python.org/3/library/unittest.html) - used to carry out testing on single units in validation.py file
 
@@ -227,27 +172,48 @@ VSCode was used to write the project code using Code Institute template
 
 ## Features
 
-### Main menu
+### Welcome Screen
 
 - Provides user with graphic welcome message
-- Gives user option to view game rules or start game
-- User stories covered: 1, 2
+- User stories covered: 1
  
 <details>
     <summary>Main Menu Screenshot</summary>
 
-![Main menu](docs/features/main-menu.JPG)
+![Welcome Screen](docs/features/features_welcome_screen.png)
 </details>
 
-### Game rules
-- Displays clear game rules
-- Allows user to return to the main menu once read
-- User stories covered: 2
+### Log in
+
+- Log in if I have played the game before and created an account
+- User stories covered: 2, 3, 10, 11, 13
+ 
+<details>
+    <summary>Logged In Screenshot</summary>
+
+![Welcome Screen](docs/features/features_logged_in.png)
+</details>
+
+### Create Account
+
+- Create an account if I have never played the game before
+- User stories covered: 2, 4, 10, 11, 13
+ 
+<details>
+    <summary>Create Account Screenshot</summary>
+
+![Welcome Screen](docs/features/features_create_account.png)
+</details>
+
+### Choose Difficulty
+- Choose difficulty level
+- Select the number of guesses available to the player
+- User stories covered: 5, 9, 12, 13
   
 <details>
-    <summary>Game rules Screenshot</summary>
+    <summary>Choose Difficulty Screenshot</summary>
 
-![Game rules](docs/features/game-rules.JPG)
+![Game rules](docs/features/features_difficulty.png)
 </details>
 
 ### Play options
@@ -345,25 +311,6 @@ VSCode was used to write the project code using Code Institute template
 #### Play 
 - Restarts the game for the same players
 - User stories covered: 7
-
-<details>
-    <summary>Restart game Screenshot</summary>
-
-![Restart Game](docs/features/restart-game.JPG)
-</details>
-
-#### Go to main menu
-- Brings players to the main menu of the program
-
-#### See your statistics
-- Display number of games won so far by each logged player
-- User stories covered: 9
-
-<details>
-    <summary>See your statistics Screenshot</summary>
-
-![Statistics](docs/features/statistics.jpg)
-</details>
 
 #### Quit game
 - Exits the program with a goodbye message
@@ -657,22 +604,17 @@ This application has been deployed from GitHub to Heroku by following the steps:
 
 ## Credits
 
-### Images
-- [Flaticon](https://www.flaticon.com/free-icon/connect_1707222) was used for the website favicon
-
 ### Code
-- [ASCII Art Generator](http://patorjk.com/software/taag/) was used to create game title
+- [ASCII Art Generator](https://www.developmenttools.com/ascii-art-generator/#p=display&f=Graffiti&t=Type%20Something...) was used to create game title
 - Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project.
 - How to install a Python module, eg. [email validation](https://pypi.org/project/email-validator/Installing)
 - [gspread documentation](https://docs.gspread.org/en/latest/user-guide.html) explained how to obtain a specific value from the google spreadsheet
 - [Stack overflow](https://stackoverflow.com/questions/20302331/typing-effect-in-python) helped me create typing effect in games rules
-- [Stack overflow](https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console) code used to clear the terminal console
 - Youtube video on [Unit Test in Python](https://www.youtube.com/watch?v=1Lfv5tUGsn8) made by Socratica was very helpful to understand the concept of unit tesing
-- Youtube tutorial [“Python Connect 4 Tutorial”](https://www.youtube.com/watch?v=gvP0gNSO17k&t=429s) made by [Spencer Lepine](https://www.youtube.com/channel/UCBL6vAHJZqUlyJp-rcFU55Q) - I used a part of Spencer's code for display of the game board, moves of alternative players and saving last move's coordinates on the board
-- Youtube tutorial [“Creating a Connect 4 Game in Python”](https://www.youtube.com/watch?v=Bk2ny_aeG-Y) made by [“Painless Programming”](https://www.youtube.com/channel/UC8ck1Yks7yP33XInXw5GZIw) -  inspired me to create a schemat for winning move logic
-<details><summary>See winning move schemat</summary>
-<img src="docs/winning-move- logic-schemat.jpg">
-</details>
+- Udemy ["The Modern Python 3 Bootcamp"](https://www.udemy.com/course/the-modern-python3-bootcamp/)
+- Youtube tutorial [“How to Build a Hangman Game with Python”](https://www.youtube.com/watch?v=JNXmCOumNw0)
+- Youtube tutorial [“How to build HANGMAN with Python in 10 MINUTES”](https://www.youtube.com/watch?v=m4nEnsavl6w)
+- Youtube tutorial [“12 Beginner Python Projects - Coding Course”](https://www.youtube.com/watch?v=8ext9G7xspg)
 
 ## Acknowledgements
 I would like to thank everyone who supported me in the development of this project:
