@@ -50,14 +50,13 @@ def start_game():
         print('Have you played this game before?')
         answer = input("Enter 'y' for Yes and 'n' for No: ").lower()
         validate_list(answer, ['y', 'n'])
-        continue
-    if answer == 'y':
-        details = auth.login()
-        return details
-    if answer == 'n':
-        print('\nPlease create an account to continue')
-        details = auth.create_account()
-        return details
+        if answer == 'y':
+            details = auth.login()
+            return details
+        if answer == 'n':
+            print('\nPlease create an account to continue')
+            details = auth.create_account()
+            return details
 
 
 def get_word(word_list):
@@ -79,13 +78,12 @@ def set_difficulty():
         print('Please enter Easy, Medium or Hard')
         difficulty = input('Please select your difficulty level: ').lower()
         validate_list(difficulty, ['easy', 'medium', 'hard'])
-        continue
-    if difficulty == 'easy':
-        return 8
-    elif difficulty == 'medium':
-        return 7
-    elif difficulty == 'hard':
-        return 6
+        if difficulty == 'easy':
+            return 8
+        elif difficulty == 'medium':
+            return 7
+        elif difficulty == 'hard':
+            return 6
         # else:
         # raise ValueError(Col.RED + 'Please enter a valid difficulty level')
 
@@ -106,9 +104,7 @@ def play_game(name, word):
         while True:
             guess = input('Please guess a letter: ').lower()
             if validate_guess(guess):
-                print('Data is valid!')
                 break
-
         guessed_letters += guess
         if guess in word:
             print(Col.GREEN + f'Well done {name}! {guess} is in the word')
@@ -124,14 +120,17 @@ def play_game(name, word):
             if word == guessed_word:
                 print(Col.GREEN + f'Congratulations {name}, you guessed the\
  correct word, {word}')
-                print(' ')
-                print("Enter 'y' to play again and 'n' to end the game")
-                replay = input('Would you like to play another game: ').lower()
-                if replay == 'y':
-                    word = get_word(words)
-                    play_game(name, word)
-                else:
-                    break
+                while True:
+                    print(' ')
+                    print("Enter 'y' to play again and 'n' to end the game")
+                    replay = input('Would you like to play another game: ')\
+                        .lower()
+                    validate_list(replay, ['y', 'n'])
+                    if replay == 'y':
+                        word = get_word(words)
+                        play_game(name, word)
+                    elif replay == 'n':
+                        break
         else:
             lives -= 1
             print(graphic[lives])
@@ -145,7 +144,7 @@ def play_game(name, word):
         if replay == 'y':
             word = get_word(words)
             play_game(name, word)
-        else:
+        elif replay == 'n':
             exit()
 
 

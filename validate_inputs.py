@@ -9,13 +9,14 @@ def validate_guess(value):
     @param: value should be a single alphabet character
     """
     try:
-        # if value.isalpha() == True:
-        #     raise ValueError(
-        #             "Please enter a letter"
-        #         )
+        if not value.isalpha():
+            raise TypeError(
+                    "Please enter a letter"
+                )
         if len(value) > 1:
             raise ValueError(
-                    f"You entered {value}, please only enter one letter"
+                    f"You entered {value}, please only enter one letter at a \
+time"
                 )
     except ValueError as err:
         print(f"Invalid data: {err}, please try again")
