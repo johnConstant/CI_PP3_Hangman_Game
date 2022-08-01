@@ -113,7 +113,7 @@ When the player either guesses the correct word or runs out of lives they will b
 4. I want to be able to create an account if I have never played before
 5. I want to be able to choose my difficulty level
 6. I want to receive a real time feedback throughout the game
-7. I want to get a feedback when I win the game
+7. I want to get a feedback when I win or lose the game
 8. I want to be able to play multiple games when I'm logged in
 
 ### Site Owner
@@ -191,7 +191,7 @@ VSCode was used to write the project code using Code Institute template
 <details>
     <summary>Logged In Screenshot</summary>
 
-![Welcome Screen](docs/features/features_logged_in.png)
+![Log in screen](docs/features/features_logged_in.png)
 </details>
 
 ### Create Account
@@ -202,7 +202,7 @@ VSCode was used to write the project code using Code Institute template
 <details>
     <summary>Create Account Screenshot</summary>
 
-![Welcome Screen](docs/features/features_create_account.png)
+![Create account](docs/features/features_create_account.png)
 </details>
 
 ### Choose Difficulty
@@ -213,135 +213,34 @@ VSCode was used to write the project code using Code Institute template
 <details>
     <summary>Choose Difficulty Screenshot</summary>
 
-![Game rules](docs/features/features_difficulty.png)
+![Choose difficulty](docs/features/features_difficulty.png)
 </details>
 
-### Play options
-- Gives players options to either log in or create a new user
-- User stories covered: 4
+### Guess letters
+- Guess individual letters
+- Receive feedback if guess is invalid
+- Receive feedback if guess is in the word
+- Receive feedback if guess is not in the word
+- User stories covered: 6, 9, 12, 13
 
 <details>
-    <summary>Play options Screenshot</summary>
+    <summary>Make Guess Screenshot</summary>
 
-![Play options](docs/features/play-options.JPG)
+![Make correct guess](docs/features/features_correct_guess.png)
+![Make incorrect guess](docs/features/features_incorrect_guess.png)
 </details>
 
-### Log-in
-- Asks users for their email addresses
-- Informs them if the email they input is incorrect or not registered
-- Gives user alternative option to try another email or create a new player
-- If correct, saves their details to Google Spreadsheet
-- User stories covered: 4, 5, 12, 13, 14
+### Game Over
+- Receive feedback when correct word is guessed
+- Receive feedback when run out of guesses
+- Receive feedback if game is over
+- User stories covered: 2, 7, 9
 
 <details>
-    <summary>Log-in Screenshot</summary>
+    <summary>Game Over Screenshot</summary>
 
-![Log-in](docs/features/log-in.JPG)
-</details>
-
-<details>
-    <summary>Alternative options Screenshot</summary>
-
-![Log-in wrong email](docs/features/log-in-wrong-email.JPG)
-</details>
-
-### Sign-up
-- Asks user for their name and email address
-- Validates user input values
-- Informs user if the name they input is incorrect
-- Informs user if the email is already taken and asks for another one
-- User stories covered: 5, 12, 13, 14
-
-<details>
-    <summary>Sign-up Screenshot</summary>
-
-![Sign-up](docs/features/sign-up.JPG)
-</details>
-
-<details>
-    <summary>Sign-up email verification Screenshot</summary>
-
-![Sign-up wrong email](docs/features/sign-up-wrong-email.JPG)
-</details>
-
-### Users greeting
-- Displays a greeting message to the user once logged in
-- User stories covered: 3, 10
-
-<details>
-    <summary>Greeting Screenshot</summary>
-
-![User greeting](docs/features/user-greeting.JPG)
-</details>
-
-### Game
-- Displays the name of currect player
-- Players are asked to select the column to insert their piece
-- Display warning message of incorrect column selected
-- Provide feedback on who's won the game
-- Gives options to play again after finished game
-- User stories covered: 3, 5, 6, 13, 14
-
-<details>
-    <summary>Game Screenshot</summary>
-
-![Game screen](docs/features/game-screen.JPG)
-</details>
-
-<details>
-    <summary>Incorrect Move in Game Screenshot</summary>
-
-![Move validation in Game screen](docs/features/game-screen-move-validation.JPG)
-</details>
-
-<details>
-    <summary>Winner Message Screenshot</summary>
-
-![Winner Message](docs/features/game-screen-winner-message.JPG)
-</details>
-
-### Finished Game options
-
-<details>
-    <summary>Finished Game options Screenshot</summary>
-
-![Finished Game options](docs/features/finished-game-options.JPG)
-</details>
-
-#### Play 
-- Restarts the game for the same players
-- User stories covered: 7
-
-#### Quit game
-- Exits the program with a goodbye message
-
-<details>
-    <summary>Quit game Screenshot</summary>
-
-![Quit Game](docs/features/quit-game.JPG)
-</details>
-
-### User Input Validation
-- Displays an error message if user input is not in a form that was expected
-- Asks for a new input and provides guidance to user on how to correctly format the input
-- User stories covered: 5, 13, 14
-
-<details>
-    <summary>Username validation Screenshot</summary>
-
-![Username validation](docs/features/validation-username.JPG)
-</details>
-
-<details>
-    <summary>Email validation Screenshot</summary>
-
-![Email validation](docs/features/validation-email.JPG)
-</details>
-
-<details>
-    <summary>Validation of input during the game Screenshot</summary>
-
-![Moves validation](docs/features/game-screen-move-validation.JPG)
+![Make correct guess](docs/features/features_game_over.png)
+![Make incorrect guess](docs/features/features_game_over_win.png)
 </details>
 
 [Back to Table Of Contents](#table-of-contents)
@@ -351,19 +250,27 @@ VSCode was used to write the project code using Code Institute template
 [PEP8 Validation Service](http://pep8online.com/) was used to check the code for PEP8 requirements. All the code passes with no errors and no warnings to show.
 
 <details><summary>PEP3 check for run.py</summary>
-<img src="docs/validation/pep8-validation-run.JPG">
+<img src="docs/validation/pep8-validation-run.png">
 </details>
 
-<details><summary>PEP3 check for validation.py</summary>
-<img src="docs/validation/pep8-validation-validation.JPG">
+<details><summary>PEP3 check for validate_inputs.py</summary>
+<img src="docs/validation/pep8-validation-validate_inputs.png">
 </details>
 
 <details><summary>PEP3 check for colors.py</summary>
-<img src="docs/validation/pep8-validation-colors.JPG">
+<img src="docs/validation/pep8-validation-colours.png">
 </details>
 
-<details><summary>PEP3 check for test_validation.py</summary>
-<img src="docs/validation/pep8-validation-test-validation.JPG">
+<details><summary>PEP3 check for unit_test.py</summary>
+<img src="docs/validation/pep8-validation-unit-test.png">
+</details>
+
+<details><summary>PEP3 check for auth.py</summary>
+<img src="docs/validation/pep8-validation-auth.png">
+</details>
+
+<details><summary>PEP3 check for hangman.py</summary>
+<img src="docs/validation/pep8-validation-hangman.png">
 </details>
 
 ## Testing
@@ -372,191 +279,6 @@ The testing approach is as follows:
 1. Manual testing of user stories
 2. Automated unit testing using the Python unittest library
 
-### Manual Testing
-<details><summary>See user stories testing</summary>
-
-1. I want to have clear options to select in the main menu
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Main menu | Select option 1 | Users are presented with game rules | Works as expected |
-| Main menu | Select option 2 | Users are asked if they played the game before | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-1.jpg">
-</details>
-
-2. I want to be able to read the rules of the game
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Main menu | Select option 1 | Users are presented with game rules | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-2.jpg">
-</details>
-
-3. I want to personalise the game and enter my name
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Play game options | Select option 1 (log-in) | Users are asked to input their email addresses, and once validated, a greeting message with their name is displayed. Names are displayed during the game | Works as expected |
-| Play game options | Select option 2 (sign-up) | Users are asked to input their names, once validated the names are saved and greeting message displayed. Names are displayed during the game | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-3-a.jpg">
-</details>
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-3-b.jpg">
-</details>
-
-4. I want to be able to log-in if I return to the game
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Play game options | Select option 1 (log-in) | Returning users are asked to input the email address they registered before and once validated, a greeting message with their name is displayed | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-4.jpg">
-</details>
-
-5. I want to receive a real time feedback throughout the game
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| User Input Validation & Feedback through game play | Players will be informed if their input is invalid | Error messages displayed | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-5-a.JPG">
-<img src="docs/testing/user-story-5-b.JPG">
-<img src="docs/testing/user-story-5-c.JPG">
-<img src="docs/testing/user-story-5-d.JPG">
-</details>
-
-6. I want to get a feedback when I win the game
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Game screen | Player has connected 4 pieces in a row | Message is displayed with the winning player's name | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-6-a.JPG">
-<img src="docs/testing/user-story-6-b.JPG">
-</details>
-
-7. I want to be able to play multiple games when I'm logged in
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Finished Game options | User selects play again option  | The game restarts for the same players | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-7.jpg">
-</details>
-
-8. I want a random selection of the player to start a new game
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Game screen | Once players have logged-in or signed-up the game is loaded  | Different user names display | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-8-a.JPG">
-<img src="docs/testing/user-story-8-b.JPG">
-</details>
-
-9. I want to see how many games I've won so far
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Finished Game options | Select option 3  | Display number of games won for Player1 & Player2 | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-9.jpg">
-</details>
-
-10. I want users to have a positive experience whilst playing the game
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Across all screen | Simple navigation and game play  | Colored messages and straightforward instructions | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-10-a.jpg">
-<img src="docs/testing/user-story-10-b.jpg">
-<img src="docs/testing/user-story-10-c.jpg">
-</details>
-
-11.  I want users to easily select options from the menu
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Across all screen | User inputs invalid numeric value | Users are asked to try again between available options from the menu | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-11-a.jpg">
-<img src="docs/testing/user-story-11-b.jpg">
-<img src="docs/testing/user-story-11-c.jpg">
-</details>
-
-12.  I want user names and emails to be saved to Google Spreadsheet
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Log-in | Both users input their names and email address which has not been previously registered  | Username and email addresses are saved to Google Spreadsheet to the next available rows in columns 1 & 2 respectively | Works as expected |
-
-<details><summary>Screenshot</summary>
-<img src="docs/testing/user-story-12.jpg">
-</details>
-
-13.  I want the user to get feedback in case of wrong input
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Across all screen | User inputs invalid numeric value in the menu or game. User inputs invalid value during log-in or sign-up | Feedback message displayed to the user | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-13-a.jpg">
-<img src="docs/testing/user-story-13-b.jpg">
-</details>
-
-14.  I want data entry to be validated, to guide the user on how to correctly format the input
-
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-| Across all screen | User inputs invalid data | Feedback message with instructions diplayed to the user | Works as expected |
-
-<details><summary>Screenshots</summary>
-<img src="docs/testing/user-story-14-a.jpg">
-<img src="docs/testing/user-story-14-b.jpg">
-</details>
-
-</details>
-
-### Automated Testing
-<details><summary>See unit testing</summary>
-
-- I wrote unit tests using Python unittest library
-- I tested separate functions to verify correct user input:
-  - validation of user email and user name input
-
-I needed to amend the function and add 'Try Except' blocks to handle TypeError.
-Initial error called - 'TypeError: object of type 'int' has no len()'
-
-
-![User email unit test](docs/testing/unit-tests/email-validation-test.jpg)
-![User name unit test](docs/testing/unit-tests/username-validation-test.jpg)
-
-  - validation of data in log_in_players and register_new_players
-
-When running the test initially, there was a TypeError called - 'TypeError: 'int' object is not iterable'. I handled this error by adding 'Try Except' blocks to both functions. This resulted with passed test.
-
-![Log-in unit test](docs/testing/unit-tests/log-in-validation-test.jpg)
-![Registration unit test](docs/testing/unit-tests/registeration-test.jpg)
-
-</details>
-
-[Back to Table Of Contents](#table-of-contents)
 ## Bugs
 
 | **Bug** | **Fix** |
@@ -605,6 +327,7 @@ This application has been deployed from GitHub to Heroku by following the steps:
 ## Credits
 
 ### Code
+- Aleksandra Haniok [Github](https://github.com/aleksandracodes/CI_PP3_Connect4) used as a guide for my unit tests and README.md
 - [ASCII Art Generator](https://www.developmenttools.com/ascii-art-generator/#p=display&f=Graffiti&t=Type%20Something...) was used to create game title
 - Code Institute - for git template IDE and "Love Sandwiches - Essentials Project" which helped me with connecting the Google Spreadsheet to my project.
 - How to install a Python module, eg. [email validation](https://pypi.org/project/email-validator/Installing)
