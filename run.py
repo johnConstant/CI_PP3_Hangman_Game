@@ -27,20 +27,6 @@ def welcome():
     time.sleep(1)
 
 
-# def get_player_name():
-#     """
-#     Get player name
-#     """
-#     while True:
-#         name = input("Please enter your name: ")
-#         try:
-#             name.isalpha()
-#             print(Col.BLUE + f"Hello {name}, welcome to Hangman")
-#             return name
-#         except ValueError:
-#             print(Col.RED + 'Only letters can be entered')
-
-
 def start_game():
     """
     Check if player is logged in
@@ -84,8 +70,6 @@ def set_difficulty():
             return 7
         elif difficulty == 'hard':
             return 6
-        # else:
-        # raise ValueError(Col.RED + 'Please enter a valid difficulty level')
 
 
 def play_game(name, word):
@@ -110,7 +94,6 @@ def play_game(name, word):
             print(Col.GREEN + f'Well done {name}! {guess} is in the word')
             correct_guesses += guess
             print(graphic[lives])
-            # https://www.youtube.com/watch?v=8ext9G7xspg
             word_list = [letter if letter in guessed_letters
                          else '_' for letter in word]
             guessed_word = ''.join(word_list)
@@ -119,8 +102,8 @@ def play_game(name, word):
             print(' ')
 
             if word == guessed_word:
-                print(Col.GREEN + f'Congratulations {name}, you guessed the\
- correct word, {word}')
+                print(Col.GREEN + f'Congratulations {name.capitalize()}, you \
+guessed the correct word, {word}')
                 while True:
                     print(' ')
                     print("Enter 'y' to play again and 'n' to end the game")
@@ -146,7 +129,9 @@ def play_game(name, word):
             word = get_word(words)
             play_game(name, word)
         elif replay == 'n':
+            print(Col.BLUE + f"Goodbye {name}")
             exit()
+            break
 
 
 def main():
