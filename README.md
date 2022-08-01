@@ -1,31 +1,67 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CONNECT 4 GAME <img src="https://cdn-icons-png.flaticon.com/512/1707/1707251.png" style="width: 40px;height:40px;">
 
-Welcome John Constant,
+**Developer: Aleksandra Haniok**
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+💻 [Visit live website](https://ci-pp3-connect4.herokuapp.com/)
 
-## Reminders
+![Mockup image](docs/screenshot-home.JPG)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## About
 
-## Creating the Heroku app
+This is a command-line version of the classic Hangman game.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Hangman is a guessing game. A random word is selected from a word list, and the player tries to guess it by suggesting letters within a certain number of guesses.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Table of Contents
+  - [Project Goals](#project-goals)
+    - [User Goals](#user-goals)
+    - [Site Owner Goals](#site-owner-goals)
+  - [User Experience](#user-experience)
+    - [Target Audience](#target-audience)
+    - [User Requirements and Expectations](#user-requirements-and-expectations)
+    - [User Manual](#user-manual)
+  - [User Stories](#user-stories)
+    - [Users](#users)
+    - [Site Owner](#site-owner)
+  - [Technical Design](#technical-design)
+    - [Flowchart](#flowchart)
+  - [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks & Tools](#frameworks--tools)
+    - [Libraries](#libraries)
+  - [Features](#features)
+  - [Validation](#validation)
+  - [Testing](#testing)
+    - [Manual Testing](#manual-testing)
+    - [Automated Testing](#automated-testing)
+  - [Bugs](#bugs)
+  - [Deployment](#deployment)
+  - [Credits](#credits)
+  - [Acknowledgements](#acknowledgements)
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Project Goals
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### User Goals
 
-Connect your GitHub repository and deploy as normal.
+- Play a fun and easy game with other player
+- Be able to log in to an existing account
 
-## Constraints
+### Site Owner Goals
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- Create a game that is easy and clear to user
+- Ensure that users understand the purpose of the game
+- Create a game that gives feedback to the user whilst playing
 
------
-Happy coding!
+## User Experience
+
+### Target Audience
+
+There is no specific audience of this game. However, I would recommend that players are at least 5 years old.
+
+### User Requirements and Expectations
+
+- A simple, error-free game
+- Straightforward navigation
+- Game personalisation by entering the player's names
+- Feedback on game results
+
