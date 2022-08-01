@@ -15,17 +15,35 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman_auth')
 
 
+def get_details():
+    """
+    Get login details from user
+    """
+    username = input("Please enter your email address: ")
+    password = input("Please enter a password: ")
+    return [username, password]
+
+
 def create_account():
     """
     Get username from player
     """
-    username = input("Please enter your username: ")
-    password = input("Please enter a password: ")
-    details = [username, password]
+    details = get_details()
     print('Creating account...')
     worksheet = SHEET.worksheet('auth_details')
     worksheet.append_row(details)
-    print(f'Thank you {username}, your account has been created.')
+    print(f'Thank you {details[0]}, your account has been created.')
 
 
-create_account()
+def login():
+    """
+    Get username from player
+    """
+    login_details = get_details()
+    data = SHEET.worksheet('auth_details').get_all_values()
+    for account in data:
+        if account == login_details:
+            print('Logged in')
+
+
+login()
