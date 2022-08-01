@@ -53,7 +53,7 @@ def set_difficulty():
     Set the number of guesses allowed based on difficulty selected
     """
     print(" ")
-    print('Please enter Easy, Medium or Hard', 'red')
+    print('Please enter Easy, Medium or Hard')
     difficulty = input('Please select your difficulty level: ').lower()
     if difficulty == 'easy':
         return 8
@@ -93,8 +93,8 @@ def play_game(name, word):
             print(' ')
 
             if word == guessed_word:
-                print(Col.GREEN + f'Congratulations {name}, you guessed the correct word\
-, {word}')
+                print(Col.GREEN + f'Congratulations {name}, you guessed the\
+ correct word, {word}')
                 print(' ')
                 print("Enter 'y' to play again and 'n' to end the game")
                 replay = input('Would you like to play another game: ').lower()
