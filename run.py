@@ -128,7 +128,7 @@ guessed the correct word, {word}')
             print(graphic[lives])
             print(Col.RED + f'Sorry but {guess} is not in the word.')
     print(' ')
-    print(Col.RED + 'Sorry but that is game over')
+    print(Col.RED + f'Sorry but the word was {word} that is game over')
     end_game(name)
 
 
