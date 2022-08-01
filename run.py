@@ -4,6 +4,7 @@ Hangman game created for third project with Code Institute
 import time
 import random
 import auth
+from validate_inputs import validate_guess, validate_list
 from colors import Color as Col
 from hangman import graphic
 from words import words
@@ -45,8 +46,11 @@ def start_game():
     Check if player is logged in
     If not create account for player
     """
-    print('Have you played this game before?')
-    answer = input("Enter 'y' if you have and 'n' if you have not: ").lower()
+    while True:
+        print('Have you played this game before?')
+        answer = input("Enter 'y' for Yes and 'n' for No: ").lower()
+        validate_list(answer, ['y', 'n'])
+        continue
     if answer == 'y':
         details = auth.login()
         return details
@@ -59,6 +63,7 @@ def start_game():
 def get_word(word_list):
     """
     Choose random word from list of words in imported list
+    @param word_list: list of strings
     """
     word = random.choice(word_list)
     return word
@@ -69,17 +74,20 @@ def set_difficulty():
     Allow user to choose the difficulty level of the game
     Set the number of guesses allowed based on difficulty selected
     """
-    print(" ")
-    print('Please enter Easy, Medium or Hard')
-    difficulty = input('Please select your difficulty level: ').lower()
+    while True:
+        print(" ")
+        print('Please enter Easy, Medium or Hard')
+        difficulty = input('Please select your difficulty level: ').lower()
+        validate_list(difficulty, ['easy', 'medium', 'hard'])
+        continue
     if difficulty == 'easy':
         return 8
     elif difficulty == 'medium':
         return 7
     elif difficulty == 'hard':
         return 6
-    else:
-        raise ValueError(Col.RED + 'Please enter a valid difficulty level')
+        # else:
+        # raise ValueError(Col.RED + 'Please enter a valid difficulty level')
 
 
 def play_game(name, word):
@@ -95,9 +103,13 @@ def play_game(name, word):
     print(word)
 
     while lives > 0:
-        guess = input('Please guess a letter: ').lower()
-        guessed_letters += guess
+        while True:
+            guess = input('Please guess a letter: ').lower()
+            if validate_guess(guess):
+                print('Data is valid!')
+                break
 
+        guessed_letters += guess
         if guess in word:
             print(Col.GREEN + f'Well done {name}! {guess} is in the word')
             correct_guesses += guess

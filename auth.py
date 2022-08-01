@@ -18,28 +18,33 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman_auth')
 
 
-def validate_user_email(email: str):
+def validate_user_email(email):
     """
     Validate the email address.
     It must be of the form name@example.com
-    @param email(string): Player's email address
+    @param email: Player's email address
     """
     try:
         validate_email(email)
-        return True
-
+        return False
     except EmailNotValidError as error:
         print(Col.RED + "\n" + str(error))
         print(Col.RED + "Please try again.\n")
+        return True
 
 
 def get_details():
     """
     Get login details from user
     """
+    print("\nWelcome back, please log in to continue")
     username = input("Please enter your email address: ")
-    # validate_user_email(username)
-    name = input("Please enter your name: ")
+
+    while True:
+        username = input("Please enter your email address: ")
+        validate_user_email(username)
+        break
+    name = input("Please enter your name: ").lower()
     password = input("Please enter a password: ")
     return [username, name, password]
 

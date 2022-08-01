@@ -19,3 +19,7 @@ class TestValidate(unittest.TestCase):
 
     def test_validate_wrong_play_game(self):
         self.assertTrue(run.play_game(1, ['test', 'word']), False)
+
+
+if __name__ == '__main__':
+    unittest.main()
