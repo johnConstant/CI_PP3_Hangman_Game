@@ -109,6 +109,7 @@ def play_game(name, word):
         if guess in word:
             print(Col.GREEN + f'Well done {name}! {guess} is in the word')
             correct_guesses += guess
+            print(graphic[lives])
             # https://www.youtube.com/watch?v=8ext9G7xspg
             word_list = [letter if letter in guessed_letters
                          else '_' for letter in word]
