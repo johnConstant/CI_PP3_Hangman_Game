@@ -14,8 +14,16 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman_auth')
 
-details = SHEET.worksheet('auth_details')
 
-data = details.get_all_values()
+def get_username():
+    """
+    Get username from player
+    """
+    username = input("Please enter your username: ")
+    username_list = [username]
+    print(f'Creating account...')
+    worksheet = SHEET.worksheet('auth_details')
+    worksheet.append_row(username_list)
 
-print(data)
+
+get_username()
