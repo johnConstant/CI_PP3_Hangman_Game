@@ -62,7 +62,8 @@ def create_account():
     print('Creating account...')
     worksheet = SHEET.worksheet('auth_details')
     worksheet.append_row(details)
-    print(Col.BLUE + f'Thank you {details[1]}, your account has been created.')
+    print(Col.BLUE + f'Thank you {details[1].capitalize()}, your account has\
+ been created.')
     return details
 
 
