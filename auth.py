@@ -20,8 +20,9 @@ def get_details():
     Get login details from user
     """
     username = input("Please enter your email address: ")
+    name = input("Please enter your name: ")
     password = input("Please enter a password: ")
-    return [username, password]
+    return [username, name, password]
 
 
 def create_account():
@@ -33,6 +34,7 @@ def create_account():
     worksheet = SHEET.worksheet('auth_details')
     worksheet.append_row(details)
     print(f'Thank you {details[0]}, your account has been created.')
+    return details
 
 
 def login():
@@ -44,6 +46,4 @@ def login():
     for account in data:
         if account == login_details:
             print('Logged in')
-
-
-login()
+            return account

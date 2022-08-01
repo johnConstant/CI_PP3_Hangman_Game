@@ -3,6 +3,7 @@ Hangman game created for third project with Code Institute
 """
 import time
 import random
+import auth
 from colors import Color as Col
 from hangman import graphic
 from words import words
@@ -25,18 +26,33 @@ def welcome():
     time.sleep(1)
 
 
-def get_player_name():
+# def get_player_name():
+#     """
+#     Get player name
+#     """
+#     while True:
+#         name = input("Please enter your name: ")
+#         try:
+#             name.isalpha()
+#             print(Col.BLUE + f"Hello {name}, welcome to Hangman")
+#             return name
+#         except ValueError:
+#             print(Col.RED + 'Only letters can be entered')
+
+
+def start_game():
     """
-    Get player name
+    Check if player is logged in
+    If not create account for player
     """
-    while True:
-        name = input("Please enter your name: ")
-        try:
-            name.isalpha()
-            print(Col.BLUE + f"Hello {name}, welcome to Hangman")
-            return name
-        except ValueError:
-            print(Col.RED + 'Only letters can be entered')
+    print('Have you played this game before?')
+    answer = input("Enter 'y' if you have and 'n' if you have not: ")
+    if answer == 'y':
+        details = auth.login()
+        return details
+    if answer == 'n':
+        details = auth.create_account()
+        return details
 
 
 def get_word(word_list):
@@ -125,9 +141,10 @@ def main():
     Run program functions
     """
     welcome()
-    name = get_player_name()
+    # name = get_player_name()
+    player_details = start_game()
     word = get_word(words)
-    play_game(name, word)
+    play_game(player_details[1], word)
 
 
 main()
