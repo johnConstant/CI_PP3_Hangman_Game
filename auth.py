@@ -1,6 +1,9 @@
 '''Import gspread and Google OAuth modules'''
 import gspread
 from google.oauth2.service_account import Credentials
+from email_validator import validate_email, EmailNotValidError
+from colors import Color as Col
+
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -15,11 +18,27 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('hangman_auth')
 
 
+def validate_user_email(email: str):
+    """
+    Validate the email address.
+    It must be of the form name@example.com
+    @param email(string): Player's email address
+    """
+    try:
+        validate_email(email)
+        return True
+
+    except EmailNotValidError as error:
+        print(Col.RED + "\n" + str(error))
+        print(Col.RED + "Please try again.\n")
+
+
 def get_details():
     """
     Get login details from user
     """
     username = input("Please enter your email address: ")
+    # validate_user_email(username)
     name = input("Please enter your name: ")
     password = input("Please enter a password: ")
     return [username, name, password]
@@ -33,7 +52,7 @@ def create_account():
     print('Creating account...')
     worksheet = SHEET.worksheet('auth_details')
     worksheet.append_row(details)
-    print(f'Thank you {details[0]}, your account has been created.')
+    print(f'Thank you {details[1]}, your account has been created.')
     return details
 
 
