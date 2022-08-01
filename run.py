@@ -34,7 +34,7 @@ def start_game():
     """
     while True:
         print('Have you played this game before?')
-        answer = input("Enter 'y' for Yes and 'n' for No: ").lower()
+        answer = input("Enter 'y' for Yes and 'n' for No: \n").lower()
         validate_list(answer, ['y', 'n'])
         if answer == 'y':
             details = auth.login()
@@ -62,7 +62,7 @@ def set_difficulty():
     while True:
         print(" ")
         print('Please enter Easy, Medium or Hard')
-        difficulty = input('Please select your difficulty level: ').lower()
+        difficulty = input('Please select your difficulty level: \n').lower()
         validate_list(difficulty, ['easy', 'medium', 'hard'])
         if difficulty == 'easy':
             return 8
@@ -73,9 +73,13 @@ def set_difficulty():
 
 
 def end_game(name):
+    """
+    Ask user to end game or continue
+    @param name: string
+    """
     print(' ')
     print("Enter 'y' to play again and 'n' to end the game")
-    replay = input('Would you like to play another game: ')\
+    replay = input('Would you like to play another game: \n')\
         .lower()
     validate_list(replay, ['y', 'n'])
     if replay == 'y':
@@ -100,7 +104,7 @@ def play_game(name, word):
 
     while lives > 0:
         while True:
-            guess = input('Please guess a letter: ').lower()
+            guess = input('Please guess a letter: \n').lower()
             if validate_guess(guess):
                 break
         guessed_letters += guess

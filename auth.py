@@ -38,14 +38,12 @@ def get_details():
     Get login details from user
     """
     print("\nWelcome back, please log in to continue")
-    username = input("Please enter your email address: ")
-
     while True:
         username = input("Please enter your email address: ")
         validate_user_email(username)
         break
-    name = input("Please enter your name: ").lower()
-    password = input("Please enter a password: ")
+    name = input("Please enter your name: \n").lower()
+    password = input("Please enter a password: \n")
     return [username, name, password]
 
 
