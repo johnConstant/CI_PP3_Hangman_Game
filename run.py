@@ -124,8 +124,8 @@ guessed the correct word, {word}')
             lives -= 1
             print(graphic[lives])
             print(Col.RED + f'Sorry but {guess} is not in the word.')
-    else:
-        end_game(name)
+
+    end_game(name)
 
 
 def main():
