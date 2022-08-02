@@ -134,7 +134,7 @@ When the player either guesses the correct word or runs out of lives they will b
 The following flowchart summarises the structure and logic of the application.
 
 <details><summary>Flowchart</summary>
-<img src="docs/Connect4-flowchart.jpg">
+<img src="docs/Drawing1.jpeg">
 </details>
 
 ## Technologies Used
@@ -242,6 +242,24 @@ VSCode was used to write the project code using Code Institute template
 
 ![Make correct guess](docs/features/features_game_over.png)
 ![Make incorrect guess](docs/features/features_game_over_win.png)
+</details>
+
+
+### Data Validation
+- Receive feedback when incorrect email is entered
+- Receive feedback when incorrect difficulty level is entered
+- Receive feedback when too many letters are entered as guess
+- Receive feedback when invalid data type is entered as guess
+- User stories covered: 2, 7, 9
+
+<details>
+    <summary>Data Validation Screenshot</summary>
+
+![Enter incorrect email](docs/features/features_incorrect_email_1.png)
+![Enter incorrect email](docs/features/features_incorrect_email_2.png)
+![Enter incorrect difficulty](docs/features/features_incorrect_difficulty_1.png)
+![Enter incorrect guess](docs/features/features_incorrect_guess_1.png)
+![Enter incorrect guess](docs/features/features_incorrect_guess_2.png)
 </details>
 
 [Back to Table Of Contents](#table-of-contents)
