@@ -107,6 +107,7 @@ def play_game(name, word):
             if validate_guess(guess):
                 break
         guessed_letters += guess
+        print(f"So far you have guessed {', '.join(guessed_letters)}")
         if guess in word:
             print(Col.GREEN + f'Well done {name}! {guess} is in the word')
             correct_guesses += guess
