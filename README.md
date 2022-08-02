@@ -32,8 +32,6 @@ Hangman is a guessing game. A random word is selected from a word list, and the 
   - [Features](#features)
   - [Validation](#validation)
   - [Testing](#testing)
-    - [Manual Testing](#manual-testing)
-    - [Automated Testing](#automated-testing)
   - [Bugs](#bugs)
   - [Future Improvements](#future-improvements)
   - [Deployment](#deployment)
@@ -307,6 +305,8 @@ The testing approach is as follows:
 [Back to Table Of Contents](#table-of-contents)
 
 ## Future Improvements
+
+The following is a list of potential improvements to be made to the game if the time coinstraints were not so tight. These are items to be added to the game in the future.
 
 | **Future Improvements** |
 | ------- | 
