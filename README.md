@@ -71,10 +71,6 @@ There is no specific audience of this game. However, I would recommend that play
 #### Welcome Screen
 Upon inital start up of the game, the player is greeted by a welcome screen which consists of an ASCII art graphic with the name of the game.
 
-#### Game rules
-With the first option to view game rules, the users are presented with a short game rules and once read they can go back to the main menu.
-Operation: Click any key and enter.
-
 #### Play
 With the Play Game option, users are asked if they have played the game before or not.
 Operation: Input either 'Y' or 'N' and press enter key. 
@@ -304,11 +300,11 @@ The testing approach is as follows:
 
 [Back to Table Of Contents](#table-of-contents)
 
-## Future Improvements
+## Future Considerations
 
 The following is a list of potential improvements to be made to the game if the time coinstraints were not so tight. These are items to be added to the game in the future.
 
-| **Future Improvements** |
+| **Future Considerations** |
 | ------- | 
 | Add validation to guess input restricting already guessed letters |
 | Add validation to create account restricting email address to one account |
